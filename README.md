@@ -13,13 +13,19 @@ use macOS10.14.3～10.15.1；
 work well：Bluetooth、battery display、touchpad、sound、light control；
 work hard:incapable GTX1050、no way to drive AR9377 use USB networkcad instead。
 
+express my thanks:
+thanks to daliansky blog and Len have done lots of work especially have many usefull ISO files;
+thanks to many kext developers like rehabman and Acidanthera;
+thanks to my seniors who have done some basic work about Samsung8500GM;
+thanks to QQ group 玄龙Hackintosh 588964385 help me a lot.
+
 hope you enjoy it！
 
 -----------------------我是分割线------------------------
 
 我个人电脑三星玄龙骑士一代的接近完美的黑苹果EFI引导文件
 
-电脑配置：
+配置：
 主机名:Samsung 8500GM-X06；
 处理器:i5-7300HQ 2.5G/3.5G；
 内存:8G 2133 MHZ DDR4；
@@ -31,5 +37,11 @@ hope you enjoy it！
 接近完美使用Catalina10.14.3-10.15.1系统；
 蓝牙，亮度，电池，触摸板，声音，核显均无问题；
 独显网卡无解使用USB网卡上网。
+
+致谢：
+黑果小兵和远景LEN等做的一些很有用的镜像文件
+许多驱动开发者
+之前做过这一机型完善的前辈
+本机型QQ交流群588964385的帮助
 
 希望你食用愉快！
