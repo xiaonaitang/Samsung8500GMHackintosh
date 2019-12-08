@@ -44,4 +44,4 @@ thanks to QQ group 玄龙Hackintosh 588964385 help me a lot.
 之前做过这一机型完善的前辈；
 本机型QQ交流群588964385的帮助。
 
-###希望你食用愉快！
+### 希望你食用愉快！
