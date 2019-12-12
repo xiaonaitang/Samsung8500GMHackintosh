@@ -1,7 +1,7 @@
 # Samsung8500GMHackintosh
 Some personal Hackintosh EFI about my computer, which is called Samsung8500GM or 玄龙骑士, work successfully.
 
-### list my computer infomation：
+### list my computer infomation
 
 | computer infomation  |    |
 | ------ | -------- |
@@ -11,12 +11,12 @@ Some personal Hackintosh EFI about my computer, which is called Samsung8500GM or
 | graphics |  HD630 3072M  |
 | networkcard |  AR9377 |
 
-### result：
-- use macOS10.14.3～10.15.1；
+### result
+- use macOS10.14.3～10.15.2；
 - work well：Bluetooth、battery display、touchpad、sound、light control；
 - work hard:incapable GTX1050、no way to drive AR9377 use USB networkcad instead。
 
-### express my thanks:
+### express my thanks
 - thanks to daliansky blog and Len have done lots of work especially have many usefull ISO files;
 - thanks to many kext developers like rehabman and Acidanthera;
 - thanks to my seniors who have done some basic work about Samsung8500GM;
@@ -28,8 +28,7 @@ Some personal Hackintosh EFI about my computer, which is called Samsung8500GM or
 
 - 我个人电脑三星玄龙骑士一代的接近完美的黑苹果EFI引导文件
 
-### 配置：
-
+### 配置
 
 | 配置  |    |
 | ------ | -------- |
@@ -40,16 +39,16 @@ Some personal Hackintosh EFI about my computer, which is called Samsung8500GM or
 | 网卡 |  AR9377（板载无法更换） |
 
 
-### 结论：
+### 结论
 - 使用本efi按照文件提示操作之后；
-- 接近完美使用Catalina10.14.3-10.15.1系统；
+- 接近完美使用Catalina10.14.3-10.15.2系统；
 - 蓝牙，亮度，电池，触摸板，声音，核显均无问题；
 - 独显网卡无解使用USB网卡上网。
 
-### 致谢：
+### 致谢
 - 黑果小兵和远景LEN等做的一些很有用的镜像文件；
 - 许多驱动开发者；
 - 之前做过这一机型完善的前辈；
 - 本机型QQ交流群588964385的帮助。
 
-### 希望你食用愉快！
+## 希望你食用愉快！
