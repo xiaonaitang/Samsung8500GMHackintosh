@@ -1,25 +1,26 @@
 
 先说明结论
-使用本efi按照操作之后完美使用Catalina10.15.1系统，蓝牙，亮度，电池，触摸板，声音，核显均无问题，独显网卡无解使用USB网卡上网，不排除使用过程中偶发性出现其他问题。
+使用本efi完美使用Mojave10.14.3-Catalina10.15.2系统
+蓝牙、亮度、电池、触摸板、声音、核显、CPU睿频、H264解码、HEVC解码均无问题
+独显、网卡无解使用USB网卡上网，不排除使用过程中偶发性出现其他问题。
 
 注意事项:
 
-有两种方法可供您选择
-第一种是使用本引导文件在Mojave系统下，在系统偏好设置中更新Catalina系统，未尝试在AppStore中升级Catalina，也许也是可以的；
-第二种是使用小兵镜像的10.15.1镜像文件（百毒云下载链接: https://pan.baidu.com/s/1OG8Dm88bH66A38E0_ek0yg 提取码: 5tub）制作完成启动盘，将镜像自带EFI删除替换成本EFI安装Catalina，安装教程参考小兵教程（https://blog.daliansky.net/MacOS-installation-tutorial-XiaoMi-Pro-installation-process-records.html）。
+有两种安装方法可供您选择
+1.使用本引导文件在Mojave系统下，在系统偏好设置或者App Store中更新Catalina系统；
+2.使用黑果小兵镜像的10.15.1（或者10.15.2）镜像文件（百毒云下载链接: https://pan.baidu.com/s/1OG8Dm88bH66A38E0_ek0yg 提取码: 5tub）制作完成启动盘，将镜像自带EFI删除粘贴本EFI安装Catalina
+安装教程参考小兵教程（https://blog.daliansky.net/MacOS-installation-tutorial-XiaoMi-Pro-installation-process-records.html）。
 
-下面介绍安装好进系统之后需要进行的一些必要设置：
-1.进系统亮度不能调节因为键盘映射有问题，需要自行修改亮度调节快捷键，路径为系统偏好设置-键盘-快捷键-显示器，最好刚安装好系统第一次进了系统进行调整，之后进系统打开偏好设置有一定概率会没有显示器选项。
+安装好进系统后的必要设置！！！：
+1.进系统亮度不能调节因为键盘映射有问题，需自行修改亮度调节快捷键，路径为系统偏好设置-键盘-快捷键-显示器，最好刚安装好系统第一次进了系统进行调整，之后进系统打开偏好设置有一定概率会没有显示器选项。
 2.进系统蓝牙不能关闭，请修改蓝牙硬件驱动ID，具体做法分为两步，开启文件移动权限和修改文件。
-catalina系统下开启文件权限需要终端依次输入sudo su
+catalina系统下开启文件权限需要打开终端依次输入sudo su
 Sudo mount -uw /
 Killall Finder
 修改文件具体为将S/L/E路径中的IOBluetoothFamily.kext/右键显示包内容/Contents/PlugIns/BroadcomBluetoothHostControllerUSBTransport.kext/右键显示包内容/Contents/Info.plist，将这一文件拖出，例如放到桌面一份，使用文本编辑打开，在IOKitPersonalities属性中找到第一个，注意是第一个com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport属性，修改其中的idProduct下一行数字为58624，idVendor下一行数字为3315，保存文件，将桌面修改好的文件再次拖进文件原位置，替换。
 最后推荐使用kext utility重建缓存
 3.刚进系统一定概率触摸板不能识别可外接鼠标使用，重建缓存后拔掉鼠标重启即可识别
 4.本EFI默认开启啰嗦模式方便排错，安装好可自行关闭啰嗦模式，即使用clover configurator软件打开config文件去掉引导-v参数。
-5.声音ALC256注入ID为5，如遇有问题可关机开机解决或者更换注入ID，注入ID可通过查询efi中的applealc驱动文件
+5.声音ALC256注入ID为5，如遇有问题可关机开机解决或者更换注入ID，注入ID可通过查询efi中的applealc驱动文件，也可以更换这一声音驱动文件的同时不要忘了更换相应的注入ID。
 
 希望你能食用愉快。
-
-
