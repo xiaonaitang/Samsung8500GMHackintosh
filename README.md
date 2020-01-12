@@ -17,11 +17,13 @@
 ## 2.clover使用结论
 - 使用黑果小兵镜像，参考小兵教程制作安装启动盘
 - 使用USB网卡联网工作
-###2.1clover结论
+
+2.1clover结论
 - 安装系统：MacOS1.14.3-10.15.2
 - 工作完美：电量显示，触摸板，亮度调节、核显硬解
 - 不能工作：独显，内置网卡，声音和蓝牙一定几率有问题、USB端口可能有问题
-###2.2opencore结论
+
+2.2opencore结论
 - 安装系统：10.15.2
 - 工作完美：蓝牙、电量显示，原生电源管理、触摸板、亮度调节、核显硬解、USB定制、睡眠
 - 不能工作：独显、内置网卡
@@ -41,9 +43,20 @@
 
 ## 5.OC使用说明
 - 如果你决定使用OC引导的话请看本节，否则不必看
+
+![Image text](https://raw.githubusercontent.com/xiaonaitang/Samsung8500GMHackintosh/master/images/loser.jpg)
+
 - OC是一种更加接近原生Mac的新引导方式，推荐使用propertree编辑配置文件
-- 我配置的oc引导文件默认只认Mac盘并进入Mac，开机没有选择界面，如需选择请按esc键即可
+- 本引导默认只认Mac盘并进入Mac，开机没有选择界面，如需选择请按esc键即可
 - OC需要添加clover编辑器生成的机型信息码
+
+选择机型
+![Image text](https://raw.githubusercontent.com/xiaonaitang/Samsung8500GMHackintosh/master/images/change.png)
+
+添加clover编辑器生成的机型信息码
+![Image text](https://raw.githubusercontent.com/xiaonaitang/Samsung8500GMHackintosh/master/images/info.png)
+
+添加到这个位置
 ![Image text](https://raw.githubusercontent.com/xiaonaitang/Samsung8500GMHackintosh/master/images/addsysteminfo.png)
 
 - 我个人解锁了cfg等bios设置，没有解锁的不推荐使用我的config文件，需要修改一些设置。
