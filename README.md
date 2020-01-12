@@ -68,6 +68,8 @@
 
 ![Image text](https://raw.githubusercontent.com/xiaonaitang/Samsung8500GMHackintosh/master/images/loser.jpg)
 
+- 请重命名config文件后将OC的引导文件整个EFI文件夹放入引导分区中，最好保留一个其他全备份或者删除避免冲突
+
 ### 5.1 总述
     OC全称opencore，是一个着眼于未来开源引导工具, 最初诞生于HermitCrabs实验室, 现在接手于Acidanthera, 其目的是创造一个更加严谨的模组化的轻量引导系统。尽管 OpenCore 的主要用途是黑苹果, 它也支持其它操作系统的引导，目前本EFI的OC引导win10有问题不建议尝试。
     是一种更加接近原生Mac的新引导方式，体现在：
@@ -112,7 +114,7 @@
 - 我个人解锁了cfg和DVMT等bios设置，强烈推荐你这么做，能更完美
 - 如果你选择不解锁bios隐藏设置也行，但需要使用合适的config文件，而且本节不用看了
 
-- 照搬小兵博客设置
+- 照搬小兵博客设置（我待修改）
 
 | 禁用  |    |
 | ------ | -------- |
@@ -146,8 +148,8 @@ cfg lock显示为0即已经在bios中解锁
      killall Finder
     
 - 终端输入如上命令
-- 更推荐你尝试这个[链接](https://www.bugprogrammer.me/2019/07/13/unlockSystem.html)使用的方法来使得Catalina开机就开启系统文件修改权限
-日常使用中一些软件没有系统修改权限不能安装
+- 更推荐你尝试这个[链接](https://www.bugprogrammer.me/2019/07/13/unlockSystem.html)使用的方法来使得Catalina开机就开启系统文件修改权限，但可能进系统程序运行屏幕会刷新一下，介意的话不必弄了
+- 日常使用中一些软件没有系统修改权限不能安装
 ## 9.相关软件
     Hackintool:黑果工具
     IORegistryExplorer:查看一些系统总线关系
