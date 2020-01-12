@@ -61,7 +61,7 @@
 - 感谢玄龙骑士群友的帮助和问题反馈（玄龙Hackintosh QQ群号588964385）
 
 ## 4.clover使用说明
-- 参照[clover目录](https://github.com/xiaonaitang/Samsung8500GMHackintosh/blob/master/EFI/使用方法.txt)里说明
+- EFI目录就是clover引导文件，注意事项参照[clover目录](https://github.com/xiaonaitang/Samsung8500GMHackintosh/blob/master/EFI/使用方法.txt)里说明，目前clover引导我不再维护
 
 ## 5.OC使用说明
 - 如果你不决定使用OC引导的话不必看本节
