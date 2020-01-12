@@ -42,7 +42,8 @@
 ## 5.OC使用说明
 - 如果你决定使用OC引导的话请看本节，否则不必看
 - OC是一种更加接近原生Mac的新引导方式，推荐使用propertree编辑配置文件
-OC需要添加clover编辑器生成的机型信息码
+- 我配置的oc引导文件默认只认Mac盘并进入Mac，开机没有选择界面，如需选择请按esc键即可
+- OC需要添加clover编辑器生成的机型信息码
 ![Image text](https://raw.githubusercontent.com/xiaonaitang/Samsung8500GMHackintosh/master/images/addsysteminfo.png)
 
 - 我个人解锁了cfg等bios设置，没有解锁的不推荐使用我的config文件，需要修改一些设置。
