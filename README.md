@@ -1,7 +1,7 @@
 # Samsung8500GMHackintosh
 Some personal Hackintosh EFI about my computer, which is called Samsung8500GM or 玄龙骑士, work successfully.
 
-![Image](https://github.com/xiaonaitang/Samsung8500GMHackintosh/blob/master/images/电脑信息.png）
+![Image text](https://github.com/xiaonaitang/Samsung8500GMHackintosh/blob/master/images/电脑信息.png）
 
 ### list my computer infomation
 
