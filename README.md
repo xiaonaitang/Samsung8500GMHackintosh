@@ -54,4 +54,12 @@ Some personal Hackintosh EFI about my computer, which is called Samsung8500GM or
 - 之前做过这一机型完善的前辈；
 - 本机型QQ交流群588964385的帮助。
 
+-----------------------我是分割线------------------------
+OC
+
+-----------------------我是分割线------------------------
+HIDPI开启
+将HIDPI文件夹下的DisplayVendorID-9e5和Icons.plist文件复制替换到S/L/Displays/Contents/Resources/Overrides
+最好备份一下原有的Icons.plist
+重启生效
 ## 希望你食用愉快！
