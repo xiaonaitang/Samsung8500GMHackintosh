@@ -46,9 +46,8 @@
 - 不能工作：独显、内置网卡、声音和蓝牙一定几率有问题、USB端口可能有问题、airport
 
 ### 2.2opencore效果
-# opencore引导暂时不可用！！！
 - 安装系统：10.15.2
-- 使用opencore版本：0.5.4
+- 使用opencore版本：0.5.5
 - 工作完美：蓝牙、电量显示、原生电源管理、触摸板、键盘、鼠标、亮度调节、核显硬解、USB定制、睡眠、类白果启动
 - 不能工作：独显、内置网卡、airport
 
@@ -62,14 +61,14 @@
 - 感谢玄龙骑士群友的帮助和问题反馈（玄龙Hackintosh QQ群号588964385）
 
 ## 4.clover使用说明
-- EFI目录就是clover引导文件，注意事项参照[clover目录](https://github.com/xiaonaitang/Samsung8500GMHackintosh/blob/master/EFI/使用方法.txt)里说明，目前clover引导我不再维护
+- EFI目录就是clover引导文件，注意事项参照[clover目录](https://github.com/xiaonaitang/Samsung8500GMHackintosh/blob/master/EFI/使用方法.txt)里说明，目前clover引导不再维护
 
 ## 5.OC使用说明
 - 如果你不决定使用OC引导的话不必看本节
 
 ![Image text](https://raw.githubusercontent.com/xiaonaitang/Samsung8500GMHackintosh/master/images/loser.jpg)
 
-- 请重命名config文件后将OC的引导文件整个EFI文件夹放入引导分区中，最好保留一个其他全备份或者删除避免冲突
+- 请重命名config文件后将OC的引导文件整个EFI文件夹放入引导分区中
 
 ### 5.1 总述
     OC全称opencore，是一个着眼于未来开源引导工具, 最初诞生于HermitCrabs实验室, 现在接手于Acidanthera, 其目的是创造一个更加严谨的模组化的轻量引导系统。尽管 OpenCore 的主要用途是黑苹果, 它也支持其它操作系统的引导，目前本EFI的OC引导win10有问题不建议尝试。
@@ -78,38 +77,21 @@
     2.使用原生电源管理，可进一步优化睿频（还没做）
     3.提高开机速度体验，文件结构更精简
 
-- 推荐使用Propertree编辑配置文件,PlistEditPro也可以
+- 推荐使用最新的opencore中文编辑器编辑配置文件,PlistEditPro也可以
 
-### 5.2 plist文件说明（文件有问题还没上传四个文件）
-    1.所有文件都需要你加三码，如需使用重命名为config.plist，放在EFI/OC路径里面
-    2.config1.plist：已解锁CFG和DVMT等bios设置，默认开机无启动盘选择界面,直接进Mac，按esc键出现选择启动盘界面
-    3.config2.plist：已解锁CFG和DVMT等bios设置，开机有启动盘界面，扫描所有启动项可供选择，停留10秒钟待选择
-    4.config3.plist：没有解锁CFG和DVMT等bios设置，默认开机无启动盘选择界面,直接进Mac，按esc键出现选择启动盘界面
-    5.config4.plist：没有解锁CFG和DVMT等bios设置，开机有启动盘界面，扫描所有启动项可供选择，停留10秒钟待选择
+### 5.2 plist文件说明
+    1.config.plist：已解锁CFG和DVMT等bios设置，默认开机有启动盘选择界面,只识别Mac
+    2.configbios.plist：未解锁CFG和DVMT等bios设置，开机有启动盘界面，扫描Mac
 
 ### 5.3 OC文件加三码
-- 因为目前的opencore还没有内置苹果三码的生成，所以需要利用clover编辑器生成的机型信息码
+- 使用opencore中文编辑器OpenCore Configurator添加机型信息
 
-选择机型，推荐选择MacBook Pro14.2机型
-![Image text](https://raw.githubusercontent.com/xiaonaitang/Samsung8500GMHackintosh/master/images/change.png)
-
-添加clover编辑器生成的机型信息码
-![Image text](https://raw.githubusercontent.com/xiaonaitang/Samsung8500GMHackintosh/master/images/info.png)
-
-添加到这个位置
-![Image text](https://raw.githubusercontent.com/xiaonaitang/Samsung8500GMHackintosh/master/images/addsysteminfo.png)
-
-退出保存
 
 ## 6.HIDPI开启和关闭
 - 不建议开启HIDPI，OC下进度条中间会黑一下很不友好，而且进度条前后半段图标大小不一致
 - HIDPI是苹果一项缩放设置技术，优化屏幕缩放显示效果，建议至少2K屏幕使用
-- 首先需要开启系统文件修改权限（有说明）
-- 将HIDPI文件夹下的DisplayVendorID-9e5和Icons.plist文件复制替换到S/L/Displays/Contents/Resources/Overrides
-- 最好备份一下原有的Icons.plist
-- 重启生效
-- 还原的话需要删掉这两个文件并将备份的文件还原
-- 也可以不采用这方式而使用终端一键开启HIDPI代码[详细请看](https://github.com/xzhih/one-key-hidpi/blob/master/README-zh.md)
+- 首先需要开启系统文件修改权限（请看第八节）
+- 使用终端一键开启HIDPI代码[详细请看](https://github.com/xzhih/one-key-hidpi/blob/master/README-zh.md)
 
 ## 7.BIOS隐藏选项设置
 - 我个人解锁了cfg和DVMT等bios设置，强烈推荐你这么做，能更完美
@@ -119,7 +101,6 @@
 
 | 禁用  |    |
 | ------ | -------- |
-| Fast Boot |  快速启动 |
 | CFG Lock (MSR 0xE2 write protection) |  CFG 锁 (MSR 0xE2 写入保护) |
 | VT-d |  VT-d |
 | CSM |  兼容性支持模块 |
@@ -127,11 +108,6 @@
 | 启用  |    |
 | ------ | -------- |
 | VT-x |  VT-x |
-| Above 4G decoding |  大于 4G 地址空间解码 |
-| Hyper Threading |  处理器超线程 |
-| Execute Disable Bit |  执行禁止位 |
-| EHCI/XHCI Hand-off |  接手 EHCI/XHCI 控制 |
-| OS type: other types |  操作系统类型: 其他 |
 
 - 实际上只需要解锁CFG lock和DVMT大小等几项设置,但最好把所有的设置都看一遍
 - 使用hackintool工具确认是否解锁了cfg lock
@@ -156,8 +132,7 @@ cfg lock显示为0即已经在bios中解锁
     IORegistryExplorer:查看一些系统总线关系
     Kext Utility:重建缓存软件
     MaciASL:编辑修改ACPI文件
-    ProperTree:OCconfig编辑器
-    PlistEdit Pro:OCconfig编辑器
+
 - [soft目录](https://github.com/xiaonaitang/Samsung8500GMHackintosh/tree/master/soft)下是一些可能需要使用到的软件
 ## 10.ACPI文件提取
 - [origin目录](https://github.com/xiaonaitang/Samsung8500GMHackintosh/tree/master/origin)下是我机子提取出的原生ACPI文件，本节说明提取方法
