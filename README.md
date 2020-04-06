@@ -21,8 +21,6 @@
 | 12 |  其他优化 |
 | 本机型QQ交流群 |  588964385 |
 
-
-
 ## 1.电脑配置
 
 | 电脑信息  |    |
@@ -141,3 +139,9 @@ cfg lock显示为0即已经在bios中解锁
        
 ## 欢迎加入同机型交流群讨论完善！
 ![Image text](https://raw.githubusercontent.com/xiaonaitang/Samsung8500GMHackintosh/master/images/QQ.png)
+
+## 随缘打赏码
+
+![Image text](https://raw.githubusercontent.com/xiaonaitang/Samsung8500GMHackintosh/master/images/ma.png)
+
+
