@@ -76,10 +76,10 @@
     2.使用原生电源管理，可进一步优化睿频（还没做）
     3.提高开机速度体验，文件结构更精简
 
-- 推荐使用最新的opencore中文编辑器编辑配置文件,PlistEditPro也可以
+- 推荐使用propertree编辑OC配置文件,PlistEditPro也可以
 
 ### 5.2 OC文件加三码
-- 使用opencore中文编辑器OpenCore Configurator添加机型信息
+- 使用propertree添加机型信息
 
 
 ## 6.HIDPI开启和关闭
