@@ -29,16 +29,16 @@
 | ------ | -------- |
 | 电脑型号 |  Samsung 8500GM-X06 |
 | 处理器 |  i5-7300HQ 2.5G/3.5G |
-| 内存 |  8G 2133 MHZ DDR4 |
+| 内存 |  16G 2133 MHZ DDR4 |
 | 声卡 |  ALC256 |
 | 核显 |  HD630（独显无解） |
 | 网卡 |  高通AR9377板载无解 |
 
 ## 2.使用效果
 - 使用黑果小兵镜像，参考小兵教程安装
-- 自行购买USB网卡联网工作
-- 没有测试HDMI外接显示器有无问题
-- 随航应该不行
+- 自行购买USB网卡或者插网线联网工作
+- 暂无测试HDMI外接显示器有无问题（近期测试）
+- 随航隔空投放未测试
 
 ### 2.1clover效果
 - 安装系统：MacOS1.14.3-10.15.3，推荐10.14.6系统
@@ -46,8 +46,8 @@
 - 不能工作：独显、内置网卡、声音和蓝牙一定几率有问题、USB端口可能有问题、airport
 
 ### 2.2opencore效果
-- 安装系统：10.15.3
-- 使用opencore版本：0.5.6
+- 安装系统：10.15.4
+- 使用opencore版本：0.5.7
 - 工作完美：蓝牙、电量显示、原生电源管理、触摸板、键盘、鼠标、亮度调节、核显硬解、USB定制、睡眠、类白果启动
 - 不能工作：独显、内置网卡、airport
 
@@ -68,7 +68,6 @@
 
 ![Image text](https://raw.githubusercontent.com/xiaonaitang/Samsung8500GMHackintosh/master/images/loser.jpg)
 
-- 请重命名config文件后将OC的引导文件整个EFI文件夹放入引导分区中
 
 ### 5.1 总述
     OC全称opencore，是一个着眼于未来开源引导工具, 最初诞生于HermitCrabs实验室, 现在接手于Acidanthera, 其目的是创造一个更加严谨的模组化的轻量引导系统。尽管 OpenCore 的主要用途是黑苹果, 它也支持其它操作系统的引导，目前本EFI的OC引导win10有问题不建议尝试。
@@ -90,8 +89,7 @@
 - 使用终端一键开启HIDPI代码[详细请看](https://github.com/xzhih/one-key-hidpi/blob/master/README-zh.md)
 
 ## 7.BIOS隐藏选项设置
-- 我个人解锁了cfg和DVMT等bios设置，强烈推荐你这么做，能更完美
-- 如果你选择不解锁bios隐藏设置也行，但需要使用合适的config文件，而且本节不用看了
+- 我个人使用OC并解锁了cfg和DVMT等bios设置，强烈推荐你这么做，能更完美
 
 | 禁用  |    |
 | ------ | -------- |
