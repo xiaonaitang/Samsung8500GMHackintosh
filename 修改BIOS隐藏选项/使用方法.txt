@@ -6,7 +6,7 @@
 输入cd efi/clover/tools回车
 （若此时报错则上一步fs1:改为fs0：，或者fs2:,或者fs3......直至不报错为止
 输入RU.efi进入bios调整页面
-此时在另一台设备打开1.txt
+此时在另一台设备打开本目录下的1.txt
 例如想打开cfg lock，在1.txt文件中搜索该字符
 出现条目XXX，varstoreinfo(。。。)：AAA，....，AAA位置字母即为目标处
 观察这一位置以及接下来几行option数值即可明白当前这一参数处于什么设置值之下
