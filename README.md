@@ -58,6 +58,44 @@ tips:经测试玄龙7700HQ的型号也可以
 
 ![Image text](https://raw.githubusercontent.com/xiaonaitang/Samsung8500GMHackintosh/master/images/loser.jpg)
 
+# 前言
+- 记录自己从无到有配置玄龙骑士，走过的坑吃过的亏，避免后来者踩坑！
+# 目录
+## 1.资料准备
+### a.在OC官方维护者主页能[下载](https://github.com/acidanthera)到大部分所需文件
+具体为:
+- [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg/releases)    OC官方更新包
+- [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases)   驱动电池CPU等
+- [AppleSupportPkg](https://github.com/acidanthera/AppleSupportPkg/releases)  苹果文件格式驱动
+- [CPUFriend](https://github.com/acidanthera/CPUFriend/releases)       定制CPU电源管理
+- [WhateverGreen](https://github.com/acidanthera/WhateverGreen/releases)    核显驱动
+- [Lilu](https://github.com/acidanthera/Lilu/releases) 综合型驱动 
+- [VoodooPS2](https://github.com/acidanthera/VoodooPS2)  键盘触摸板驱动
+- [AppleALC](https://github.com/acidanthera/AppleALC/releases)  声卡驱动
+- [NVMeFix](https://github.com/acidanthera/NVMeFix/releases)   NVME固态修补驱动（可选）
+- [VoodooInput](https://github.com/acidanthera/VoodooInput/releases)   妙控板拓展驱动（可选）
+
+### b.其他必须的驱动
+### c.宪武大佬OC补丁[OC-little-master](https://github.com/daliansky/OC-little)
+### d.利用clover引导获取本机DSDT文件得到origin文件夹
+e.
+
+
+## 2.文件结构
+如图所示
+![Image text](https://raw.githubusercontent.com/xiaonaitang/Samsung8500GMHackintosh/master/images/list.png)
+
+## 3.config设置
+如图所示
+## 4.电池补丁制作
+补丁原理：
+## 5.触摸板补丁制作
+补丁原理：
+## 6.其余补丁完善
+
+## 7.错误和解决
+
+
 
 ### 5.1 总述
     OC全称opencore，是一个着眼于未来开源引导工具, 最初诞生于HermitCrabs实验室, 现在接手于Acidanthera, 其目的是创造一个更加严谨的模组化的轻量引导系统。尽管 OpenCore 的主要用途是黑苹果, 它也支持其它操作系统的引导，目前本EFI的OC引导win10有问题不建议尝试。
