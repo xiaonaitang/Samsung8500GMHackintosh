@@ -1,5 +1,6 @@
 # Samsung8500GM黑苹果引导
 三星玄龙骑士一代黑苹果接近完美引导
+我得花几天时间重写这部分，准备写个本机型最全的readme，我太难了
 最终效果
 ![Image text](https://raw.githubusercontent.com/xiaonaitang/Samsung8500GMHackintosh/master/images/computerinfo.png)
 
@@ -44,9 +45,9 @@
 - 不能工作：独显、内置网卡、声音和蓝牙一定几率有问题、USB端口可能有问题、airport
 
 ### 2.2opencore效果
-- 安装系统：10.15.4
-- 使用opencore版本：0.5.7
-- 工作完美：蓝牙、电量显示、原生电源管理、触摸板、键盘、鼠标、亮度调节、核显硬解、USB定制、睡眠、类白果启动
+- 安装系统：10.15.4（我暂时稳定用这个系统了）
+- 使用opencore版本：0.6.0
+- 工作完美：蓝牙、电量显示、原生电源管理、触摸板、键盘、鼠标、亮度调节、核显硬解、USB定制、睡眠、类白果启动、HDMI、隔空投放
 - 不能工作：独显、内置网卡、airport
 
 ## 3.致谢
@@ -81,14 +82,15 @@
 
 
 ## 6.HIDPI开启和关闭
-- 不建议开启HIDPI，OC下进度条中间会黑一下很不友好，而且进度条前后半段图标大小不一致
-- HIDPI是苹果一项缩放设置技术，优化屏幕缩放显示效果，建议至少2K屏幕使用
+- HIDPI字面意思就是高DPI，通俗来说好比拿两三个像素点渲染一个像素，所以开启后分辨率设置越低，画面越清楚，但同时字体界面啥的会变大，一般建议4K显示开启，但如果自己喜欢也可以开启，毕竟眼睛怎么舒服怎么来，这是我的个人理解
+- 需要注意的是开启后OC下进度条中间会黑一下，而且进度条前后半段图标大小不一致，当然可以设置前后半段一样的大小
 - 首先需要开启系统文件修改权限（请看第八节）
 - 使用终端一键开启HIDPI代码[详细请看](https://github.com/xzhih/one-key-hidpi/blob/master/README-zh.md)
+- 上条用不了可以用国内的镜像代码我待会更新
 
 ## 7.BIOS隐藏选项设置
-- 我个人使用OC并解锁了cfg和DVMT等bios设置，强烈推荐你这么做，能更完美
-
+- 我个人使用OC并解锁了cfg和DVMT等bios设置，推荐你这么做，不做也没关系可以打补丁小兵上有教程自己去了解吧，我待会移植过来相关内容
+- 主要就是两个
 | 禁用  |    |
 | ------ | -------- |
 | CFG Lock (MSR 0xE2 write protection) |  CFG 锁 (MSR 0xE2 写入保护) |
@@ -139,6 +141,3 @@ cfg lock显示为0即已经在bios中解锁
        
 ## 欢迎加入同机型交流群讨论完善！
 ![Image text](https://raw.githubusercontent.com/xiaonaitang/Samsung8500GMHackintosh/master/images/QQ.png)
-
-## 随缘打赏码
-![Image text](https://raw.githubusercontent.com/xiaonaitang/Samsung8500GMHackintosh/master/images/ma.png)
