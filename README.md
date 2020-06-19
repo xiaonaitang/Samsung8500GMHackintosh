@@ -36,6 +36,7 @@
 - 系统偏好设置或者App Store中更新Catalina系统
 
 ## 3.安装成功进系统后遇到问题和解决
+
 - 1.进系统亮度不能调节，一般clover会遇到或者OC没加补丁，因为键盘映射有问题，要么自行修改亮度调节快捷键，路径为系统偏好设置-键盘-快捷键-显示器，但是有一定概率会没有显示器选项；要么使用键盘映射软件修改亮度快捷键的映射；个人最推荐使用本机型键盘亮度快捷键布丁。
 - 2.进系统蓝牙不能关闭，请修改蓝牙硬件驱动ID，具体做法分为两步，开启文件修改权限和修改文件。catalina系统下开启文件权限需要打开终端依次输入
 - sudo su(输入本机密码，不会显示出来）
@@ -80,38 +81,59 @@
 - 看release自用的OC文件设置这样就行就不贴图了，图片不显示也没办法
 
 ### 4.5 特别说明
+
 - CFG主板默认没解锁，需要以下设置
 kernel/Quirks/AppleCpuPmCfgLock设置true，kernel/Quirks/AppleXcpmCfgLock设置true，UEFI/Quirks/IgnoreInvalidFlexRatio设置true
 - USB没有定制的话需要用USBinjectall.kext，并且kernel/Quirks/XhciPortLimit设置true,定制好USB驱动就可以设置false
 - 空壳驱动相较于完整驱动，在kernel/Add/ExecutablePath是留空的，比如定制USB的驱动USBport就是空壳驱动，因为驱动右键显示包内容，只有一个info.plist文件没有其他文件。
 - FakeAppleUSBMouse.kext这个驱动是仿冒苹果鼠标的，使用要在关于本机/系统报告/USB找到自己鼠标，查看厂商ID和产品ID，转换成16进制修改FakeAppleUSBMouse.kext右键包展开里的info.plist最后的数值，注意这是空壳驱动，使用后系统偏好设置/鼠标里面能够设置鼠标各个键的功能。
 - Misc/Boot/ShowPicker为是否显示OC启动选择项，Timeout为显示的时间秒，Misc/Security/ScanPolicy为OC的扫描策略，具体怎么算出来的可以用OCC计算出来，我设置的是只扫描MAC盘，改成0就是全部格式都扫描
+- 三码用OCC或者clover编辑器都能生成相应的码，config.plist里面需要填写机型信息
 
 ### 4.6 SSDT文件说明
-- SSDT-BAT 电池补丁，需要配合电池重命名以及SMC电池驱动或者R神的电池驱动
-- SSDT-EC-USBX-PLUG  三补丁合一，仿冒EC部件，增加USB插入苹果手机能快充以及原生电源管理
-SSDT-GPRW、SSDT-DeepIdle、SSDT-LIDpatch-AOAC、SSDT-S3-disable解决睡眠问题补丁
-- SSDT-HRTF  声卡补丁
-- SSDT-MEM2-PMCR-DMAC、SSDT-SBUS-MCHC、SSDT-SLPB缺失部件
-- SSDT-NVMe  nvme补丁
+
+- SSDT-BAT 电池补丁，需要配合电池重命名以及SMC电池驱动或者R神的电池驱动，查看别的大量教程制作大体上完美但是可能还有瑕疵
+- SSDT-EC-USBX-PLUG  三补丁合一，仿冒EC部件，增加USB插入苹果手机能快充以及原生电源管理，添加后偏好设置/节能里有四项
+SSDT-GPRW、SSDT-DeepIdle、SSDT-LIDpatch-AOAC、SSDT-S3-disable解决睡眠问题几大补丁，本子采用了AOAC技术，对睡眠影响很大，不加补丁会使得睡眠睡死
+- SSDT-HRTF  声卡补丁，屏蔽原有的几个声卡相关的部件并仿冒里部件起作用，还是有一定概率无声音只不过比之前好多了
+- SSDT-MEM2-PMCR-DMAC、SSDT-SBUS-MCHC、SSDT-SLPB缺失部件，即白果有的部件而我们本子ACPI没有的部件
+- SSDT-NVMe  nvme补丁，忘了起什么作用的，好像是解决硬盘图标显示外接黄盘的
 - SSDT-PNLF-ALS0  能够调节亮度，并且偏好设置/显示器有亮度自动调节按钮，需要配合SMC的light驱动
-- SSDT-Q63Q64   亮度快捷键映射补丁，使得Mac里面能够和win用一样的快捷键，需要配合亮度重命名使用
-- SSDT-SPTP-GPEN-XOSI    触摸板补丁，要配合I2C两个驱动使用，值得注意的是这个补丁会使得win蓝屏
+- SSDT-Q63Q64   亮度快捷键映射补丁，使得Mac里面能够和win用一样的快捷键，需要配合亮度重命名使用，并且偏好设置/快捷键里面亮度调节的快捷键必须是默认的F14F15调节，原理就是把玄龙的FN调节亮度键映射成MAC默认的键，虽然F14实际上不存在
+- SSDT-SPTP-GPEN-XOSI    触摸板补丁，要配合I2C两个驱动使用，值得注意的是这个补丁会使得win蓝屏，实际测试我的本子触摸板驱动了但是有不少群友测试触摸板没用emmm
 
 ## 5.HIDPI开启和关闭
-- HIDPI字面意思就是高DPI，通俗来说好比拿两三个像素点渲染一个像素，所以开启后分辨率设置越低，画面越清楚，但同时字体界面啥的会变大，一般建议4K显示开启，但如果自己喜欢也可以开启，毕竟眼睛怎么舒服怎么来，这是我的个人理解
+
+- HIDPI字面意思就是高DPI，通俗来说好比拿两三个像素点渲染一个像素，所以开启后分辨率设置越低，画面越清楚，但同时字体界面啥的会变大，一般建议4K显示开启，但如果自己喜欢也可以开启，毕竟眼睛怎么舒服怎么来，这是我的个人理解，我自己开了，真香
 - 需要注意的是开启后OC下进度条前后半段图标大小不一致，当然可以设置前后半段一样的大小NVRAM/Add/4D1E..../UIScale设置01就是默认大小02就是开启HIDPI后放大了的大小
 - 首先需要开启系统文件修改权限
 - 使用终端一键开启HIDPI代码[详细请看](https://github.com/xzhih/one-key-hidpi/blob/master/README-zh.md)
 - 上条代码用不了可以用[国内的镜像代码](https://www.sqlsec.com/2018/09/hidpi.html)
 
 ## 6.HDMI
+
 - 通过hackintool可以修改缓冲祯，修改端口定义来使得HDMI能够使用，在应用补丁里面设置好信息参数，Kaby lake,0x591B0000,基本显存和缓冲祯默认，接口这要把除了第一条索引，其他两条全改为HDMI而不是其他的类型，第一条LVDS是笔记本自带的屏幕无需修改，应用补丁/通用里面取消勾选自动侦测变化，勾选设备属性，接口，基本显存，图形卡，高级里面勾选仿冒图形卡、修复热拔插重启、HDMI无限循环修复、禁用egpu,VDMT32预分配、显存2048MB，启用HDMI20，点击生成补丁，点击左上角文件-导出-config.plist，将参数添加到OC的配置文件的device properties对应的PCI里面。
 
 ## 7.hackintool
-- 这一软件有很多用法，可参考小兵的hackintool教程,内核扩展可查看用到的驱动版本，显示器选项玩法多，可生成HIDPI文件，可解决部分显示问题，USB部分可定制USB驱动，PCIE部分可查看部件的PCI路径，电源部分可点击底部修复深度睡眠解决部分睡眠问题，计算机部分可计算进制，工具部分挺多工具，可重建缓存，可查看一些参数例如CFG是否锁，日志可查看开机的代码，可查看是否有error并解决
 
-## .致谢
+- 这一软件有很多用法，可参考小兵的hackintool教程,内核扩展可查看用到的驱动版本，显示器选项玩法多，可生成HIDPI文件，可解决部分显示问题，USB部分可定制USB驱动，PCIE部分可查看部件的PCI路径，声音部分可直接查看当前声卡型号可以用什么注入ID，电源部分可点击底部修复深度睡眠解决部分睡眠问题，计算机部分可计算进制，工具部分挺多工具，可重建缓存，可查看一些参数例如CFG是否锁，日志可查看开机的代码，可查看是否有error并解决
+
+## 8.一些资料链接
+
+- [Mac推荐的小软件](https://www.zuiyu1818.cn/posts/Mac_software1.html)
+- [非常好用的Mac应用程序、软件以及工具](https://github.com/jaywcjlove/awesome-mac/blob/master/README-zh.md)
+- [iOS开发常用三方库、插件、知名博客等](https://github.com/Tim9Liu9/TimLiu-iOS)
+- [Mac software Homepage](https://mac.softpedia.com)
+- [触摸设备DSDT修补补充](https://github.com/williambj1/VoodooI2C-PreRelease/blob/master/触摸板补充.md)
+- [CFG解锁详细说明](http://bbs.pcbeta.com/viewthread-1834965-1-2.html)
+- [参考暗影精灵3EFI](https://github.com/shimakazechan/OMEN-by-HP-3-Hackintosh)
+- [利用AppleALC驱动声卡(也推荐此博客)](https://blog.tlhub.cn/Driver-audio-for-hackintosh.html)
+- [NDK版opencore引导](https://github.com/n-d-k/OpenCorePkg)
+- [解决iMessage与Facetime以及苹果三码的问题](https://blog.csdn.net/weixin_40684028/article/details/85270633)
+- [黑苹果自定义键盘Fn快捷键(也推荐此博客)](https://blog.skk.moe/post/ssdt-map-fn-shortcuts/)
+
+## 9.致谢
+
 - [远景论坛](http://bbs.pcbeta.com)
 - 参考[xjin大佬博客](https://blog.xjn819.com/?p=543)
 - 国内外许多驱动开发者
