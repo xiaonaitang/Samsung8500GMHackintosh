@@ -108,6 +108,9 @@ SSDT-GPRW、SSDT-DeepIdle、SSDT-LIDpatch-AOAC、SSDT-S3-disable解决睡眠问�
 ## 6.HDMI
 - 通过hackintool可以修改缓冲祯，修改端口定义来使得HDMI能够使用，在应用补丁里面设置好信息参数，Kaby lake,0x591B0000,基本显存和缓冲祯默认，接口这要把除了第一条索引，其他两条全改为HDMI而不是其他的类型，第一条LVDS是笔记本自带的屏幕无需修改，应用补丁/通用里面取消勾选自动侦测变化，勾选设备属性，接口，基本显存，图形卡，高级里面勾选仿冒图形卡、修复热拔插重启、HDMI无限循环修复、禁用egpu,VDMT32预分配、显存2048MB，启用HDMI20，点击生成补丁，点击左上角文件-导出-config.plist，将参数添加到OC的配置文件的device properties对应的PCI里面。
 
+## 7.hackintool
+- 这一软件有很多用法，可参考小兵的hackintool教程,内核扩展可查看用到的驱动版本，显示器选项玩法多，可生成HIDPI文件，可解决部分显示问题，USB部分可定制USB驱动，PCIE部分可查看部件的PCI路径，电源部分可点击底部修复深度睡眠解决部分睡眠问题，计算机部分可计算进制，工具部分挺多工具，可重建缓存，可查看一些参数例如CFG是否锁，日志可查看开机的代码，可查看是否有error并解决
+
 ## .致谢
 - [远景论坛](http://bbs.pcbeta.com)
 - 参考[xjin大佬博客](https://blog.xjn819.com/?p=543)
@@ -115,6 +118,5 @@ SSDT-GPRW、SSDT-DeepIdle、SSDT-LIDpatch-AOAC、SSDT-S3-disable解决睡眠问�
 - 本机型和相似电脑的前辈工作积累
 - [黑果小兵](https://blog.daliansky.net)和[len的镜像](http://bbs.pcbeta.com/viewthread-1836586-1-2.html)以及安装教程;
 - [宪武大佬大量补丁](https://github.com/daliansky/OC-little)工作和指导，尤其让我对重命名有深刻理解
-- 感谢玄龙骑士群友的帮助和问题反馈（玄龙Hackintosh QQ群号588964385）
        
 ## 欢迎加入同机型交流群（群号:588964385）讨论完善！
