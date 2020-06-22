@@ -40,8 +40,8 @@
 - 1.进系统亮度不能调节，一般clover会遇到或者OC没加补丁，因为键盘映射有问题，要么自行修改亮度调节快捷键，路径为系统偏好设置-键盘-快捷键-显示器，但是有一定概率会没有显示器选项；要么使用键盘映射软件修改亮度快捷键的映射；个人最推荐使用本机型键盘亮度快捷键布丁。
 - 2.进系统蓝牙不能关闭，请修改蓝牙硬件驱动ID，具体做法分为两步，开启文件修改权限和修改文件。catalina系统下开启文件权限需要打开终端依次输入
 - sudo su(输入本机密码，不会显示出来）
-- Sudo mount -uw /
-- Killall Finder
+- sudo mount -uw /
+- killall Finder
 - 保持终端不能关闭（更推荐你尝试这个[链接](https://www.bugprogrammer.me/2019/07/13/unlockSystem.html)使用的方法来使得Catalina开机就开启系统文件修改权限，但可能进系统程序运行屏幕会刷新一下，介意的话不必弄了）修改文件具体为将S/L/E（就是系统/资源/拓展）路径中的IOBluetoothFamily.kext/ 右键显示包内容/Contents/PlugIns/BroadcomBluetoothHostControllerUSBTransport.kext/ 右键显示包内容/Contents/Info.plist，将这一文件拖出，例如放到桌面一份，使用文本编辑或者propertree打开，在IOKitPersonalities属性中找到第一个，注意是第一个com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport属性，修改其中的idProduct数字为58624，idVendor数字为3315，保存文件，将桌面修改好的文件再次拖进文件原位置，替换输入密码。最后使用kext utility重建缓存或者hackintool-工具来重建缓存后，才能关闭终端
 - 3.刚进系统一定概率触摸板不能识别可外接鼠标使用，修复权限后重建缓存，重启大概率会识别，若还没有识别，查看自制OC的EFI里面自己制作触摸板补丁有没有问题，若还不能识别，就有些复杂了，后面我再补充一些触摸板相关资料自己试试吧，我没研究下去了
 - 4.声音ALC256注入ID为56，57，这个数值的来源是查看aplealc驱动里面的info.plist文件查到的ALC256注入ID，如遇有问题可关机开机解决或者更换ID。
