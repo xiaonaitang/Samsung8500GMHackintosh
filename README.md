@@ -123,7 +123,8 @@ SSDT-GPRW、SSDT-DeepIdle、SSDT-LIDpatch-AOAC、SSDT-S3-disable解决睡眠问�
 - 格式化固态硬盘和机械硬盘，格式选择apfs。
 - 打开macOS实用工具-终端，输入命令“diskutil resetFusion”并按回车键。
 - 出现提示时键入Yes，大小写要严格对应，按回车键。
-[参考资料](https://post.smzdm.com/p/a3gv9n0k/)
+- [参考资料1](https://post.smzdm.com/p/a3gv9n0k/)
+- [参考资料2](https://www.jianshu.com/p/d4e1fd94dcef)
 
 ## 9.一些资料链接
 
