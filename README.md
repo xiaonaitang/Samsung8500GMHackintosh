@@ -118,7 +118,14 @@ SSDT-GPRW、SSDT-DeepIdle、SSDT-LIDpatch-AOAC、SSDT-S3-disable解决睡眠问�
 
 - 这一软件有很多用法，可参考小兵的hackintool教程,内核扩展可查看用到的驱动版本，显示器选项玩法多，可生成HIDPI文件，可解决部分显示问题，USB部分可定制USB驱动，PCIE部分可查看部件的PCI路径，声音部分可直接查看当前声卡型号可以用什么注入ID，电源部分可点击底部修复深度睡眠解决部分睡眠问题，计算机部分可计算进制，工具部分挺多工具，可重建缓存，可查看一些参数例如CFG是否锁，日志可查看开机的代码，可查看是否有error并解决
 
-## 8.一些资料链接
+## 8.Fusion Drive组建
+
+- 格式化固态硬盘和机械硬盘，格式选择apfs。
+- 打开macOS实用工具-终端，输入命令“diskutil resetFusion”并按回车键。
+- 出现提示时键入Yes，大小写要严格对应，按回车键。
+[参考资料](https://post.smzdm.com/p/a3gv9n0k/)
+
+## 9.一些资料链接
 
 - [Mac推荐的小软件](https://www.zuiyu1818.cn/posts/Mac_software1.html)
 - [非常好用的Mac应用程序、软件以及工具](https://github.com/jaywcjlove/awesome-mac/blob/master/README-zh.md)
@@ -132,7 +139,7 @@ SSDT-GPRW、SSDT-DeepIdle、SSDT-LIDpatch-AOAC、SSDT-S3-disable解决睡眠问�
 - [解决iMessage与Facetime以及苹果三码的问题](https://blog.csdn.net/weixin_40684028/article/details/85270633)
 - [黑苹果自定义键盘Fn快捷键(也推荐此博客)](https://blog.skk.moe/post/ssdt-map-fn-shortcuts/)
 
-## 9.致谢
+## 10.致谢
 
 - [远景论坛](http://bbs.pcbeta.com)
 - 参考[xjin大佬博客](https://blog.xjn819.com/?p=543)
