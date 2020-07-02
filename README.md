@@ -1,11 +1,10 @@
 # Samsung8500GM黑苹果引导
-- readme 2.0版
 
-- 增加HDMI端口修正方法
-- 增加一些小技巧助力使用macOS
-- 增加一些其他资源链接
-- 增加各驱动各补丁含义
-- 普及一些黑果奇怪的知识
+- readme 20.7.2版
+- 尝试直升11失败
+- 制作了蓝牙空壳驱动，删掉了复杂的蓝牙文件修改
+- 将设备仿冒为最新的MacBook Pro2020
+- 10.15.5HDMI端口已修正
 
 ## 1.我的笔记本配置
 
@@ -20,39 +19,39 @@
 
 - 经测试玄龙7700HQ等其他型号也可以
 
-## 2.使用OC说明
-- OC全称opencore，是一个着眼于未来开源引导工具, 最初诞生于HermitCrabs实验室, 现在接手于Acidanthera, 其目的是创造一个更加严谨的模组化的轻量引导系统。尽管 OpenCore 的主要用途是黑苹果, 它也支持其它操作系统的引导，目前OC引导win10有问题不建议尝试。主要是有些部件要在Mac生效就要启用一些补丁，而这些关键补丁会在win里面导致蓝屏，OC是一种更加接近原生Mac的新引导方式，体现在：开机可以更加白果，可直接进系统不出现选择启动盘页面；使用原生电源管理，可进一步优化睿频；提高开机速度体验，文件结构更精简。
-- 推荐使用propertree或者OCC编辑OC配置文件,PlistEditPro或者Xcode也可以
-- 使用黑果小兵镜像，参考[小兵教程](https://blog.daliansky.net/MacOS-installation-tutorial-XiaoMi-Pro-installation-process-records.html) 安装，做好启动盘后替换成我的EFI，有问题就看后面的自制本机型OC的EFI试试
-- 自行购买USB网卡或者插网线联网工作
-- 安装系统：10.15.4
+## 2.使用说明
+
+- 推荐使用propertree或者OCC编辑OC配置文件，OCC需要对应OC版本,PlistEditPro或者Xcode也可以，我自己用的propertree
+- 使用黑果小兵15.5(19F101)镜像，参考[小兵按照教程](https://blog.daliansky.net/MacOS-installation-tutorial-XiaoMi-Pro-installation-process-records.html) ，做好启动盘后替换成我的EFI，有问题就看后面的OC配置EFI
+- 自行购买USB网卡或者插网线联网工作，我买的comfast的CF-WU810N的USB网卡
+- 安装系统：10.15.5
 - 使用opencore版本：0.6.0
 - 工作完美：蓝牙、电量显示、原生电源管理、触摸板、键盘、鼠标、亮度调节、核显硬解、USB定制、睡眠、类白果启动、HDMI、隔空投放、声音、CPU睿频、H264解码、HEVC解码
 - 不能工作：独显、内置网卡、airport
-- 本机型15.4及以下HDMI外接显示器完美，但测试对于7700HQ+1060+Catalina15.5的机子HDMI始终不行，猜测可能HDMI走独显无法驱动或者15.5的问题，本机型暂未测试15.5的HDMI问题，不少八九代的电脑都有HDMI需要仿冒七代才能暂时工作，不晓得15.5搞什么幺蛾子，我也就没升级15.5了
+- 本机型15.5及以下HDMI外接显示器完美，但对于7700HQ+1060的机子HDMI直连独显HDMI不能驱动
 - 随航未测试因为我没有苹果设备
-- clover能使用，用14.2-15.2，虽然有些瑕疵吧，推荐clover上14.6系统，我就不更新了，后面有一小部分关于clover的内容（还没写）
-- 项目文件夹里的EFI等文件就不要用了，去release里面下载使用吧
-- 系统偏好设置或者App Store中更新Catalina系统
+- clover能使用，用14.2-15.2版本系统，荐clover上14.6系统，暂不更新clover，最早的release就是发布的本机械clover的EFI
+- 项目文件夹里的EFI就不要用了，去本项目release里面下载使用吧
+- 亮度调节经过映射和win一样的FN+F2/F3快捷键。
 
-## 3.安装成功进系统后遇到问题和解决
+## 3.问题和解决
 
-- 1.进系统亮度不能调节，一般clover会遇到或者OC没加补丁，因为键盘映射有问题，要么自行修改亮度调节快捷键，路径为系统偏好设置-键盘-快捷键-显示器，但是有一定概率会没有显示器选项；要么使用键盘映射软件修改亮度快捷键的映射；个人最推荐使用本机型键盘亮度快捷键布丁。
-- 2.进系统蓝牙不能关闭，请修改蓝牙硬件驱动ID，具体做法分为两步，开启文件修改权限和修改文件。catalina系统下开启文件权限需要打开终端依次输入
+- 1.catalina系统开启系统文件修改权限需要打开终端依次输入
 - sudo su(输入本机密码，不会显示出来）
 - sudo mount -uw /
 - killall Finder
-- 保持终端不能关闭（更推荐你尝试这个[链接](https://www.bugprogrammer.me/2019/07/13/unlockSystem.html)使用的方法来使得Catalina开机就开启系统文件修改权限，但可能进系统程序运行屏幕会刷新一下，介意的话不必弄了）修改文件具体为将S/L/E（就是系统/资源/拓展）路径中的IOBluetoothFamily.kext/ 右键显示包内容/Contents/PlugIns/BroadcomBluetoothHostControllerUSBTransport.kext/ 右键显示包内容/Contents/Info.plist，将这一文件拖出，例如放到桌面一份，使用文本编辑或者propertree打开，在IOKitPersonalities属性中找到第一个，注意是第一个com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport属性，修改其中的idProduct数字为58624，idVendor数字为3315，保存文件，将桌面修改好的文件再次拖进文件原位置，替换输入密码。最后使用kext utility重建缓存或者hackintool-工具来重建缓存后，才能关闭终端
-- 3.刚进系统一定概率触摸板不能识别可外接鼠标使用，修复权限后重建缓存，重启大概率会识别，若还没有识别，查看自制OC的EFI里面自己制作触摸板补丁有没有问题，若还不能识别，就有些复杂了，后面我再补充一些触摸板相关资料自己试试吧，我没研究下去了
-- 4.声音ALC256注入ID为56，57，这个数值的来源是查看aplealc驱动里面的info.plist文件查到的ALC256注入ID，如遇有问题可关机开机解决或者更换ID。
+- 更推荐你尝试这个[链接](https://www.bugprogrammer.me/2019/07/13/unlockSystem.html)使用的方法来使得Catalina开机就开启系统文件修改权限，但可能进系统程序运行屏幕会刷新一下，介意的话不必弄了
+- 2.进系统后接鼠标进偏好设置看看触摸板有没有识别，有识别把轻触点击开开触摸板就好了，还可以辅助功能里开三指移动功能我个人很喜欢。如果不识别触摸板，开启上述文件修改权限，不能关闭终端，然后用kext utility或者hackintool软件重建缓存一下，重启看能不能识别，还是不能识别我也没办法，后面我补充一些触摸板相关资料自己试试吧，我没研究下去了
+- 4.声音ALC256注入ID为56，57，这个数值的来源是查看aplealc驱动里面右键显示包内容的info.plist文件查到的ALC256注入ID，声音有时候进系统没声音不能调节，可关机开机解决或者更换ID，更换ID的位置在config.plist文件的deviceproperties/add/声卡PCI路径/layoutid
+- 目前为止你可以直接使用EFI安装了，如果有什么问题再往下看
 
 ## 4.OC的EFI配制方法
 
-- 有点长，我会说的详细些，记录自己从无到有配置玄龙骑士，走过的坑吃过的亏，避免后来者踩坑！
+- 有点长，我会说的简明些，记录自己从无到有配置玄龙骑士，走过的坑吃过的亏，避免后来者踩坑！
 - 请参考xjn大佬的 [OC博客](https://blog.xjn819.com/?p=543) 来修改制作文件,我主要说一些和博客内容不一样的本机型设置
 
 ### 4.1 资料文件准备
-
+- 这些驱动只是为了我自己做个链接指引，你可以无视继续往下看
 - [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg/releases)    OC官方更新包
 - [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases)   驱动电池CPU等
 - [AppleSupportPkg](https://github.com/acidanthera/AppleSupportPkg/releases)  苹果文件格式驱动
@@ -65,18 +64,30 @@
 - [VoodooInput](https://github.com/acidanthera/VoodooInput/releases)   妙控板拓展驱动
 - [USBInjectAll](https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads)  USB驱动
 - [VoodooI2C](https://github.com/VoodooI2C/VoodooI2C/releases)  触摸板驱动
+- FakeAppleUSBMouse   仿冒白果USB鼠标驱动
+- NoTouchID    解决MacBook Pro15以上机型卡ID问题驱动
+- RealtekRTL8111   有线网卡驱动
+- Samsung8500GMBluetoothInjector   本机型蓝牙能开能关驱动
+- SMCBatteryManager    电池驱动需要配合电池SSDT布丁
+- SMCLightSensor    亮度传感器驱动配合亮度SSDT驱动能自动调节亮度
+- SMCProcessor    处理器传感器驱动
+- SMCSuperIO。  总线驱动
+- SystemProfilerMemoryFixup   像白果一样关于本机有显示内存一项驱动
+- USBPorts      定制USB驱动
+- VoodooI2CHID      触摸板驱动
+- VoodooInput     voodoo依赖驱动
+- VoodooPS2Controller     键鼠驱动
 - [OC-little-master](https://github.com/daliansky/OC-little)    宪武大佬OC补丁
-- 将下载好的文件里面的KEXT文件放入OC的kext文件夹里
 
 ### 4.2 利用clover引导获取本机DSDT.aml文件
 
-- 将本机clover的EFI放入U盘的EFI分区，开机U盘启动，在clover引导选择进哪个系统界面，按一下F4键，不会有任何反应，进系统后在EFI/clover/ACPI/origin文件里有一个DSDT.aml文件，其他文件也可保留可反编译用。
+- 将本机clover的EFI放入U盘的EFI分区，开机U盘启动，在clover引导选择进哪个系统的界面，按一下F4键，不会有任何反应，进系统后在EFI/clover/ACPI/origin文件里有一个DSDT.aml文件，其他文件也可保留可反编译用。
 
 ### 4.3 文件结构
 
 - 看release自用的OC文件结构这样就行就不贴图了，图片不显示也没办法
 
-### 4.4 本机型config设置
+### 4.4 config设置
 
 - 看release自用的OC文件设置这样就行就不贴图了，图片不显示也没办法
 
@@ -84,9 +95,9 @@
 
 - CFG主板默认没解锁，需要以下设置
 kernel/Quirks/AppleCpuPmCfgLock设置true，kernel/Quirks/AppleXcpmCfgLock设置true，UEFI/Quirks/IgnoreInvalidFlexRatio设置true
-- USB没有定制的话需要用USBinjectall.kext，并且kernel/Quirks/XhciPortLimit设置true,定制好USB驱动就可以设置false
+- USB没有定制的话需要用USBinjectall.kext，并且kernel/Quirks/XhciPortLimit设置true,定制好USB驱动就可以设置false，直接用我EFI不改USB的话也可以照我的不动
 - 空壳驱动相较于完整驱动，在kernel/Add/ExecutablePath是留空的，比如定制USB的驱动USBport就是空壳驱动，因为驱动右键显示包内容，只有一个info.plist文件没有其他文件。
-- FakeAppleUSBMouse.kext这个驱动是仿冒苹果鼠标的，使用要在关于本机/系统报告/USB找到自己鼠标，查看厂商ID和产品ID，转换成16进制修改FakeAppleUSBMouse.kext右键包展开里的info.plist最后的数值，注意这是空壳驱动，使用后系统偏好设置/鼠标里面能够设置鼠标各个键的功能。
+- FakeAppleUSBMouse.kext这个驱动是仿冒苹果鼠标的，使用要在关于本机/系统报告/USB找到自己鼠标，查看厂商ID和产品ID，转换成16进制修改进FakeAppleUSBMouse.kext右键包展开里的info.plist最后的数值，注意这是空壳驱动，使用后系统偏好设置/鼠标里面能够设置鼠标各个键的功能。
 - Misc/Boot/ShowPicker为是否显示OC启动选择项，Timeout为显示的时间秒，Misc/Security/ScanPolicy为OC的扫描策略，具体怎么算出来的可以用OCC计算出来，我设置的是只扫描MAC盘，改成0就是全部格式都扫描
 - 三码用OCC或者clover编辑器都能生成相应的码，config.plist里面需要填写机型信息
 
@@ -94,13 +105,14 @@ kernel/Quirks/AppleCpuPmCfgLock设置true，kernel/Quirks/AppleXcpmCfgLock设置
 
 - SSDT-BAT 电池补丁，需要配合电池重命名以及SMC电池驱动或者R神的电池驱动，查看别的大量教程制作大体上完美但是可能还有瑕疵
 - SSDT-EC-USBX-PLUG  三补丁合一，仿冒EC部件，增加USB插入苹果手机能快充以及原生电源管理，添加后偏好设置/节能里有四项
-SSDT-GPRW、SSDT-DeepIdle、SSDT-LIDpatch-AOAC、SSDT-S3-disable解决睡眠问题几大补丁，本子采用了AOAC技术，对睡眠影响很大，不加补丁会使得睡眠睡死
+SSDT-GPRW、SSDT-DeepIdle、SSDT-LIDpatch-AOAC、SSDT-S3-disable、SSDT-WakeScreen、SSDT-PTSWAK解决睡眠问题几大补丁，本子采用了AOAC技术，对睡眠影响很大，不加补丁会使得睡眠睡死
 - SSDT-HRTF  声卡补丁，屏蔽原有的几个声卡相关的部件并仿冒里部件起作用，还是有一定概率无声音只不过比之前好多了
 - SSDT-MEM2-PMCR-DMAC、SSDT-SBUS-MCHC、SSDT-SLPB缺失部件，即白果有的部件而我们本子ACPI没有的部件
 - SSDT-NVMe  nvme补丁，忘了起什么作用的，好像是解决硬盘图标显示外接黄盘的
 - SSDT-PNLF-ALS0  能够调节亮度，并且偏好设置/显示器有亮度自动调节按钮，需要配合SMC的light驱动
 - SSDT-Q63Q64   亮度快捷键映射补丁，使得Mac里面能够和win用一样的快捷键，需要配合亮度重命名使用，并且偏好设置/快捷键里面亮度调节的快捷键必须是默认的F14F15调节，原理就是把玄龙的FN调节亮度键映射成MAC默认的键，虽然F14实际上不存在
 - SSDT-SPTP-GPEN-XOSI    触摸板补丁，要配合I2C两个驱动使用，值得注意的是这个补丁会使得win蓝屏，实际测试我的本子触摸板驱动了但是有不少群友测试触摸板没用emmm
+- SSDT-DGPU 屏蔽独显
 
 ## 5.HIDPI开启和关闭
 
@@ -120,6 +132,7 @@ SSDT-GPRW、SSDT-DeepIdle、SSDT-LIDpatch-AOAC、SSDT-S3-disable解决睡眠问�
 
 ## 8.Fusion Drive组建
 
+- 目的是为了将我原厂小固态和大机械组合成一块大容量硬盘并且达到固态的读写速度，如果你不想这样做不必看这个
 - 格式化固态硬盘和机械硬盘，格式选择apfs。
 - 打开macOS实用工具-终端，输入命令“diskutil resetFusion”并按回车键。
 - 出现提示时键入Yes，大小写要严格对应，按回车键。
