@@ -139,6 +139,9 @@ SSDT-GPRW、SSDT-DeepIdle、SSDT-LIDpatch-AOAC、SSDT-S3-disable解决睡眠问�
 - [NDK版opencore引导](https://github.com/n-d-k/OpenCorePkg)
 - [解决iMessage与Facetime以及苹果三码的问题](https://blog.csdn.net/weixin_40684028/article/details/85270633)
 - [黑苹果自定义键盘Fn快捷键(也推荐此博客)](https://blog.skk.moe/post/ssdt-map-fn-shortcuts/)
+- [HDMI音频资料](https://github.com/xxxzc/xps15-9570-macos/issues/12)
+- [黑苹果英特尔全系核显显卡驱动教程](http://bbs.pcbeta.com/viewthread-1849099-1-2.html)
+- [FCPX核显独显全程满速指南](http://bbs.pcbeta.com/viewthread-1836920-1-4.html)
 
 ## 10.致谢
 
