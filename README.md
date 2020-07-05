@@ -1,5 +1,6 @@
 # Samsung8500GM黑苹果引导
-
+- readme 20.7.5版
+- 可尝试恢复安装macOS11来尝鲜新系统，增加相应链接资料
 - readme 20.7.2版
 - 尝试直升11失败
 - 制作了蓝牙空壳驱动，删掉了复杂的蓝牙文件修改
@@ -155,6 +156,7 @@ SSDT-GPRW、SSDT-DeepIdle、SSDT-LIDpatch-AOAC、SSDT-S3-disable、SSDT-WakeScre
 - [HDMI音频资料](https://github.com/xxxzc/xps15-9570-macos/issues/12)
 - [黑苹果英特尔全系核显显卡驱动教程](http://bbs.pcbeta.com/viewthread-1849099-1-2.html)
 - [FCPX核显独显全程满速指南](http://bbs.pcbeta.com/viewthread-1836920-1-4.html)
+- [黑苹果安装macOS11](https://xiaobaistudio.com/AMD黑苹果安装macOS-11.html)
 
 ## 10.致谢
 
