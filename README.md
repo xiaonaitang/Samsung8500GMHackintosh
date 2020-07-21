@@ -1,4 +1,9 @@
 # Samsung8500GM黑苹果引导
+- readme 20.7.21版
+- 完美从10.15.5更新10.15.6
+- 另外成功全新安装上macOS Big Sur Beta2，和在Catalina一样触摸板电池蓝牙等各部件使用正常，但是暂时USB网卡驱动不太好装
+- 安装过程：使用安装新系统的EFI进Catalina，格式化安装分区，使用的Big Sur beta2[下载地址](http://swcdn.apple.com/content/downloads/04/19/001-23553-A_1O2KYISWEK/58hrejz970xje070in5dorjoovnmw61x03/InstallAssistant.pkg),点击下载的pkg文件会生成一个安装app，运行后选择安装位置就可安装，会自动重启，重启好了在OC界面选择install，跑码，期间会重启多次，跑码完毕进入安装进度条，自动重启，在OC界面自动进入pre开头选项，重启进入安装分区名字选项进入新系统
+- 使用感受：状态栏由于不能驱动Wi-Fi会卡顿，比Catalina耗电，UI有平板内味，暂时不能作为主力机系统使用
 - readme 20.7.5版
 - 可尝试恢复安装macOS11来尝鲜新系统，增加相应链接资料
 - readme 20.7.2版
