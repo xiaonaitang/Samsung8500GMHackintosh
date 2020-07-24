@@ -1,4 +1,6 @@
 # Samsung8500GM黑苹果引导
+- readme 20.7.24版
+- 成功安装[macOS Big Sur11beta3](http://swcdn.apple.com/content/downloads/34/37/001-26097-A_OYW4Z0U99Z/gdas3ubse9fasb0217grmmyplfd6o7mqfp/InstallAssistant.pkg)，安装方法和beta2相同，启动盘变成preboot可安装IntelPowerGadget解决，
 - readme 20.7.21版
 - 完美从10.15.5更新10.15.6
 - 另外成功全新安装上macOS Big Sur Beta2，和在Catalina一样触摸板电池蓝牙等各部件使用正常，但是暂时USB网卡驱动不太好装
