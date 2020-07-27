@@ -12,7 +12,7 @@
 - 尝试直升11失败
 - 制作了蓝牙空壳驱动，删掉了复杂的蓝牙文件修改
 - 将设备仿冒为最新的MacBook Pro2020
-- 10.15.5HDMI端口已修正
+- HDMI端口已修正
 
 ## 1.我的笔记本配置
 
@@ -30,7 +30,7 @@
 ## 2.使用说明
 
 - 推荐使用propertree或者OCC编辑OC配置文件，OCC需要对应OC版本,PlistEditPro或者Xcode也可以，我自己用的propertree
-- 使用黑果小兵15.5(19F101)镜像，参考[小兵按照教程](https://blog.daliansky.net/MacOS-installation-tutorial-XiaoMi-Pro-installation-process-records.html) ，做好启动盘后替换成我的EFI，有问题就看后面的OC配置EFI
+- 使用黑果小兵15.5(19F101)镜像，参考小兵[安装教程](https://blog.daliansky.net/MacOS-installation-tutorial-XiaoMi-Pro-installation-process-records.html) ，做好启动盘后替换成我的EFI，有问题就看后面的OC配置EFI
 - 自行购买USB网卡或者插网线联网工作，我买的comfast的CF-WU810N的USB网卡
 - 安装系统：10.15.5
 - 使用opencore版本：0.6.0
