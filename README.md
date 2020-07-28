@@ -141,7 +141,7 @@ SSDT-GPRW、SSDT-DeepIdle、SSDT-LIDpatch-AOAC、SSDT-S3-disable、SSDT-WakeScre
 ## 8.Fusion Drive组建
 
 - 目的是为了将我原厂小固态和大机械组合成一块大容量硬盘并且达到固态的读写速度，如果你不想这样做不必看这个
-- 格式化固态硬盘和机械硬盘，格式选择apfs。
+- 格式化固态硬盘和机械硬盘，格式选择apfs（这步可不操作）。
 - 打开macOS实用工具-终端，输入命令“diskutil resetFusion”并按回车键。
 - 出现提示时键入Yes，大小写要严格对应，按回车键。
 - [参考资料1](https://post.smzdm.com/p/a3gv9n0k/)
