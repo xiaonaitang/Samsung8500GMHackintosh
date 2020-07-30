@@ -111,6 +111,7 @@ kernel/Quirks/AppleCpuPmCfgLock设置true，kernel/Quirks/AppleXcpmCfgLock设置
 
 ### 4.6 SSDT文件说明
 
+- [SSDT编辑器下载](https://github.com/acidanthera/MaciASL/releases)
 - SSDT-BAT 电池补丁，需要配合电池重命名以及SMC电池驱动或者R神的电池驱动，查看别的大量教程制作大体上完美但是可能还有瑕疵
 - SSDT-EC-USBX-PLUG  三补丁合一，仿冒EC部件，增加USB插入苹果手机能快充以及原生电源管理，添加后偏好设置/节能里有四项
 SSDT-GPRW、SSDT-DeepIdle、SSDT-LIDpatch-AOAC、SSDT-S3-disable、SSDT-WakeScreen、SSDT-PTSWAK解决睡眠问题几大补丁，本子采用了AOAC技术，对睡眠影响很大，不加补丁会使得睡眠睡死
