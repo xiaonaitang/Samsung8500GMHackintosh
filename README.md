@@ -165,6 +165,7 @@ SSDT-GPRW、SSDT-DeepIdle、SSDT-LIDpatch-AOAC、SSDT-S3-disable、SSDT-WakeScre
 - [黑苹果英特尔全系核显显卡驱动教程](http://bbs.pcbeta.com/viewthread-1849099-1-2.html)
 - [FCPX核显独显全程满速指南](http://bbs.pcbeta.com/viewthread-1836920-1-4.html)
 - [黑苹果安装macOS11](https://xiaobaistudio.com/AMD黑苹果安装macOS-11.html)
+- [黑苹果如何调整风扇的转速](http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1037700&ordertype=1)
 
 ## 10.致谢
 
